@@ -1,0 +1,52 @@
+<form [formGroup]="filterForm" class="filter-form">
+  <!-- Поиск по тексту -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Search</mat-label>
+    <input matInput formControlName="search" placeholder="Search">
+  </mat-form-field>
+
+  <!-- Фильтры по авторам -->
+  <div class="column">
+    <h4>Authors</h4>
+    <mat-checkbox *ngFor="let author of authors" [checked]="isAuthorIncluded(author)" (change)="updateAuthors($event, author)">
+      {{ author }}
+    </mat-checkbox>
+  </div>
+
+  <!-- Фильтры по языкам -->
+  <div class="column">
+    <h4>Languages</h4>
+    <mat-checkbox *ngFor="let language of languages" [checked]="isLanguageIncluded(language)" (change)="updateLanguages($event, language)">
+      {{ language }}
+    </mat-checkbox>
+  </div>
+
+  <!-- Выпадающий список жанров -->
+  <mat-form-field appearance="fill" class="column">
+    <mat-label>Genre</mat-label>
+    <mat-select formControlName="genre">
+      <mat-option value="">All Genres</mat-option>
+      <mat-option *ngFor="let genre of genres" [value]="genre">{{ genre }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Минимальное и максимальное количество страниц -->
+  <div class="column">
+    <div class="min-max">
+      <mat-form-field appearance="fill">
+        <mat-label>Min Pages</mat-label>
+        <input matInput type="number" formControlName="minPages" placeholder="Min Pages">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Max Pages</mat-label>
+        <input matInput type="number" formControlName="maxPages" placeholder="Max Pages">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="column">
+    <button (click)="goToAddNewBook()">ADD NEW BOOK</button>
+    <button (click)="goToAddNewAuthor()">ADD NEW AUTHOR</button>
+  </div>
+</form>

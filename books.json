@@ -1,0 +1,63 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Лавка чудес",
+      "authorId": "1",
+      "pages": 20,
+      "language": "Русский",
+      "genre": "Fantasy",
+      "preview": "/assets/oogway_comcics/lavka1.png",
+      "pdfUrl": "/assets/oogway_comcics/pdf/lavka1.pdf",
+      "description": "text more text text more text  text more text  text more text  text more text "
+    },
+    {
+      "id": "2",
+      "title": "Лавка Чудес 2",
+      "authorId": "2",
+      "pages": 310,
+      "language": "English",
+      "genre": "Fantasy",
+      "preview": "/assets/oogway_comcics/lavka2.pdf",
+      "pdfUrl": "/assets/oogway_comcics/pdf/lavka2.pdf",
+      "description": "text more text text more text  text more text  text more text  text more text "
+    },
+    {
+      "id": "3",
+      "title": "Митан1",
+      "authorId": "3",
+      "pages": 328,
+      "language": "Русский",
+      "genre": "Science Fiction",
+      "preview": "/assets/oogway_comcics/mitan1.png",
+      "pdfUrl": "/assets/oogway_comcics/pdf/Mitan1.pdf",
+      "description": "text more text text more text  text more text  text more text  text more text"
+    },
+    {
+      "id": "4",
+      "title": "Митан2",
+      "authorId": "3",
+      "pages": 328,
+      "language": "English",
+      "genre": "Science Fiction",
+      "preview": "/assets/oogway_comcics/mitan_peremens.png",
+      "pdfUrl": "/assets/oogway_comcics/pdf/Mitan2.pdf",
+      "description": "text more text text more text  text more text  text more text  text more text"
+    }
+  ],
+  "authors": [
+    {
+      "id": "1",
+      "name": "Тимуп Шарипов"
+    },
+    {
+      "id": "2",
+      "name": "Баха"
+    },
+    {
+      "id": "3",
+      "name": "George Orwell",
+      "editing": false
+    }
+  ]
+}

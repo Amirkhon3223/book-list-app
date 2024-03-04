@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+}
+
+.filters {
+  width: 20%; /* Ширина блока фильтров */
+  padding: 1rem;
+}
+
+.filters .fixed{
+  position: fixed;
+  width: 20%;
+  padding: 1rem;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.book-list {
+  padding: 16px;
+}

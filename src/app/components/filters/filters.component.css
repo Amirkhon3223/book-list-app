@@ -1,0 +1,20 @@
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px; /* Пространство между столбцами */
+}
+
+.min-max-pages {
+  width: 150px; /* Ширина поля для минимального и максимального количества страниц */
+}

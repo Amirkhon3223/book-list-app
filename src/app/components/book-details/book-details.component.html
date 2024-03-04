@@ -1,0 +1,16 @@
+<mat-card *ngIf="book">
+  <mat-card-header>
+    <mat-card-title>{{ book.title }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image [src]="book.preview" alt="{{ book.title }}">
+  <mat-card-content>
+    <p><strong>Страницы:</strong> {{ book.pages }}</p>
+    <p><strong>Язык:</strong> {{ book.language }}</p>
+    <p><strong>Жанр:</strong> {{ book.genre }}</p>
+    <p><strong>Описание:</strong> {{ book.description }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button color="primary" [routerLink]="['/']">Вернуться к списку книг</a>
+    <a mat-button color="accent" [href]="book.pdfUrl" target="_blank">Ссылка на PDF</a>
+  </mat-card-actions>
+</mat-card>

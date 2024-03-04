@@ -1,0 +1,23 @@
+<div>
+  <h2>Создать нового автора</h2>
+  <form (ngSubmit)="createNewAuthor(newAuthorName)">
+    <div>
+      <label for="authorName">Имя автора:</label>
+      <input type="text" id="authorName" [(ngModel)]="newAuthorName" name="authorName" required>
+    </div>
+    <button type="submit">Создать</button>
+  </form>
+</div>
+
+<div>
+  <h2>Список авторов</h2>
+  <ul>
+    <li *ngFor="let author of authors">
+      <span *ngIf="!author.editing">{{ author.name }}</span>
+      <input *ngIf="author.editing" type="text" [(ngModel)]="author.name">
+      <button (click)="author.editing ? saveAuthor(author) : editAuthor(author)">
+        {{ author.editing ? 'Сохранить' : 'Редактировать' }}
+      </button>
+    </li>
+  </ul>
+</div>

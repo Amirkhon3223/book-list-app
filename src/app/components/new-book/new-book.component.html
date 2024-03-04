@@ -1,0 +1,75 @@
+<form *ngIf="newBookForm" [formGroup]="newBookForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="title">Название</label>
+    <input type="text" class="form-control" id="title" formControlName="title" placeholder="Название">
+    <div *ngIf="newBookForm.get('title')?.invalid && (newBookForm.get('title')?.dirty || newBookForm.get('title')?.touched)" class="text-danger">
+      Название обязательно
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="author">Автор</label>
+    <select class="form-control" id="author" formControlName="author">
+      <option value="">Выберите автора</option>
+      <option *ngFor="let author of allAuthors" [value]="author.name">{{ author.name }}</option>
+    </select>
+    <div *ngIf="newBookForm.get('author')?.invalid && (newBookForm.get('author')?.dirty || newBookForm.get('author')?.touched)" class="text-danger">
+      Выберите автора
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Описание</label>
+    <textarea class="form-control" id="description" formControlName="description" placeholder="Описание" rows="4"></textarea>
+    <div *ngIf="newBookForm.get('description')?.invalid && (newBookForm.get('description')?.dirty || newBookForm.get('description')?.touched)" class="text-danger">
+      Описание обязательно
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="pages">Число страниц</label>
+    <input type="number" class="form-control" id="pages" formControlName="pages" placeholder="Число страниц">
+    <div *ngIf="newBookForm.get('pages')?.invalid && (newBookForm.get('pages')?.dirty || newBookForm.get('pages')?.touched)" class="text-danger">
+      Число страниц должно быть положительным
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="language">Язык</label>
+    <select class="form-control" id="language" formControlName="language">
+      <option value="">Выберите язык</option>
+      <option *ngFor="let language of allLanguages" [value]="language">{{ language }}</option>
+    </select>
+    <div *ngIf="newBookForm.get('language')?.invalid && (newBookForm.get('language')?.dirty || newBookForm.get('language')?.touched)" class="text-danger">
+      Выберите язык
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="genre">Жанр</label>
+    <input type="text" class="form-control" id="genre" formControlName="genre" placeholder="Жанр">
+    <div *ngIf="newBookForm.get('genre')?.invalid && (newBookForm.get('genre')?.dirty || newBookForm.get('genre')?.touched)" class="text-danger">
+      Жанр обязателен
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="coverImage">Обложка</label>
+    <input type="file" class="form-control-file" id="coverImage" formControlName="coverImage" accept="image/*" (change)="onCoverImageChange($event)">
+    <div *ngIf="newBookForm.get('coverImage')?.invalid && (newBookForm.get('coverImage')?.dirty || newBookForm.get('coverImage')?.touched)" class="text-danger">
+      Загрузите обложку
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="pdfFile">PDF файл</label>
+    <input type="file" class="form-control-file" id="pdfFile" formControlName="pdfFile" accept=".pdf" (change)="onPdfFileChange($event)">
+    <div *ngIf="newBookForm.get('pdfFile')?.invalid && (newBookForm.get('pdfFile')?.dirty || newBookForm.get('pdfFile')?.touched)" class="text-danger">
+      Загрузите PDF файл
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Создать книгу</button>
+  </div>
+</form>
